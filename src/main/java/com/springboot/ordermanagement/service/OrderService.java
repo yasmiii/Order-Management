@@ -16,8 +16,10 @@ import java.util.List;
 @Transactional
 public class OrderService {
 
+    @Autowired
     private ModelMapper modelMapper;
 
+    @Autowired
     private OrderRepo orderRepo;
 
     public List<OrderDto> getAllOrders(){
