@@ -11,13 +11,18 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
-@RequestMapping(value = "api/v1")
+@RequestMapping(value = "api/v1/")
 public class OrderController {
 
     private OrderService orderService;
+
+    public OrderController (OrderService orderService){
+        this.orderService = orderService;
+    }
 
     @GetMapping("/getAllOrders")
     public List<OrderDto> getAllOrders(){
         return orderService.getAllOrders();
     }
+
 }
